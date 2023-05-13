@@ -36,8 +36,25 @@ def generate_password(min_length, numbers=True, special_characters=True):
             meets_criteria = meets_criteria and has_special
 
     return pwd
-pw = generate_password(20)
-print(pw)
+
+print('LENGTH OF PASSWORD REQUIRED:')
+n = int(input())
+
+print('NEED NUMBERS ?: Y OR N')
+a = input()
+
+print('NEED SPECIAL CHARACTERS ? : Y OR N')
+b = input()
+
+def func_1(var):
+  if var.upper()=='Y':
+    var = True
+  else:
+    var = False
+  return var
+pw = generate_password(n,func_1(a),func_1(b))
+print("")
+print("Password :", pw)
 
 
 
